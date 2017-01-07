@@ -10,44 +10,68 @@ namespace FunctionalProgramming
     {
         char [] nowAlphabetize;
 
-        public void RemoveDublicates()
+        public void RemoveDublicates(List<string> words, List<int> numbers)
         {
-            List<string> stringList = new List<string>{ "The", "The", "dog", "runs", "fast" };
-            List<string> removeDuplicates = stringList.Distinct().ToList();
-
-            List<int> listOfInts = new List<int> { 1, 2, 3, 4, 1, 2, 3, 4 };
-            List<int> removeDublicates = listOfInts.Distinct().ToList();
-        }
-        public void FindAverage()
-        {
-
-        }
-
-        public string[] FindLetterFrequency(string randomLetters)
-        {
-            int[] letterFrequency = new int[(int)char.MaxValue];
-            foreach (char number in randomLetters)
-            {
-                letterFrequency[(int)number]++;
-            }
-                for (int i = 0; i < (int)char.MaxValue; i++)
-                {
-                    if (letterFrequency[i] > 0 && char.IsLetterOrDigit((char)i))
-                    {
-                        //Console.WriteLine("{0} {1}",(char)i, letterFrequency[i]);
-                    }
-                }        
-            return nowAlphabetize;
             
+            List<string> removeDuplicates = words.Distinct().ToList();
+            List<int> removeDublicates = numbers.Distinct().ToList();           
         }
-
-        public void AlphabeticalOrder()
+        public void FindAverage(List<string> grades) 
         {
-            char[] alphabetize = nowAlphabetize;
-            Array.Sort<char>(alphabetize);
-            Console.WriteLine(alphabetize);
-            //return new string(scrambledLetters);
+
+            List<string> averagedGrades = grades.Average().ToList();
+
+
+    }
+
+    // public char[] FindLetterFrequency(string randomLetters)
+    //{
+    //    int[] letterFrequency = new int[(int)char.MaxValue];
+    //    foreach (char number in randomLetters)
+    //    {
+    //        letterFrequency[(int)number]++;
+    //    }
+    //        for (int i = 0; i < (int)char.MaxValue; i++)
+    //        {
+    //            if (letterFrequency[i] > 0 && char.IsLetterOrDigit((char)i))
+    //            {
+
+    //             Console.WriteLine("{0} {1}",(char)i, letterFrequency[i]);
+    //            }
+    //        }        
+    //    return nowAlphabetize;
+
+    //}
+
+    public void AlphabeticalOrder()
+        {
+            //string randomLetters = "Llewellyn";
+            //string lowerLetters = randomLetters.ToUpper();
+
+            //char[] alphabetize = lowerLetters.ToCharArray();
+            ////Array.Sort<char>(alphabetize);
+
+            //var letterCount = alphabetize.OrderBy()
+
+            //Console.WriteLine(alphabetize);
+            ////return new string(scrambledLetters);
         }
+        //public void TestMethod()
+        //{
+        //    {
+        //        // Input array.
+        //        string[] array = { "the", "glass", "bead", "game" };
+
+        //        // Order alphabetically by reversed strings.
+        //        var result = array.OrderBy(a => new string(a.ToCharArray().Reverse().ToArray()));
+
+        //        // Display results.
+        //        foreach (var item in result)
+        //        {
+        //            Console.WriteLine(item);
+        //        }
+        //   }
+        //}
 
     }
 }
