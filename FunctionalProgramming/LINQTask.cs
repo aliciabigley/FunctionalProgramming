@@ -20,70 +20,69 @@ namespace FunctionalProgramming
             removeDuplicates = words.Distinct().ToList();
             removeDublicates = numbers.Distinct().ToList();           
         }
-        public double  FindAverageOneStudent(string student1)
+        public void  FindAverageOneStudent(string student1)
         {
            var gradesStringToInt = (student1.Split(',').Select(int.Parse).ToList());
             var averageGrades = (from i in gradesStringToInt where i > gradesStringToInt.Min() select i).Average();
             Console.WriteLine(averageGrades);
             this.averageGrades = averageGrades;
-            return this.averageGrades;
+            //return this.averageGrades;
+        }
+        
+        public void AverageGradeMultipleStudents()
+        {
+            //double studentA = FindAverageOneStudent(string student1);
+            //double studentB = FindAverageOneStudent(student2);
+            //double[] collectStudentsGrades = { studentA, studentB };
+           // double averageStudentGrades = collectStudentsGrades.Average();
         }
 
-        //public void AverageGradeMultipleStudents(double this.averageGrade, int studentB)
+        public void FindLetterFrequency(string randomLetters)
+        {
+            string upperLetters = String.Concat(randomLetters.ToUpper().OrderBy(alphabetical => alphabetical));
+            string[] array = {upperLetters };
+            var letterFrequency = from i in upperLetters.ToArray() group i by i into groupLetters select groupLetters;
+            foreach (var letter in letterFrequency)
+            Console.WriteLine($"Letter: {letter.Key} Frequency: {letter.Count()}");
+        }
+
+
+
+        //public void AlphabeticalOrder(string randomLetters)
         //{
-        //    double[] collectStudentsGrades = { studentA, studentB };
-        //    double averageStudentGrades = collectStudentsGrades.Average();
+        //    //string randomLetters = "Llewellyn";
+        //    string lowerLetters = randomLetters.ToUpper();
+        //    char[] alphabetize = lowerLetters.ToCharArray();
+        //    Array.Sort<char>(alphabetize);
+
+        //var letterCount = alphabetize.OrderBy();
+
+        //    Console.WriteLine(letterCount);
+        //    //return new string(scrambledLetters);
         //}
-
-
-        // public char[] FindLetterFrequency(string randomLetters)
+        //public char[] FindLetterFrequency(string randomLetters)
         //{
         //    int[] letterFrequency = new int[(int)char.MaxValue];
         //    foreach (char number in randomLetters)
         //    {
         //        letterFrequency[(int)number]++;
         //    }
-        //        for (int i = 0; i < (int)char.MaxValue; i++)
-        //        {
-        //            if (letterFrequency[i] > 0 && char.IsLetterOrDigit((char)i))
-        //            {
-
-        //             Console.WriteLine("{0} {1}",(char)i, letterFrequency[i]);
-        //            }
-        //        }        
-        //    return nowAlphabetize;
-
-        //}
-
-        //public void AlphabeticalOrder()
+        //    for (int i = 0; i < (int)char.MaxValue; i++)
         //    {
-        //string randomLetters = "Llewellyn";
-        //string lowerLetters = randomLetters.ToUpper();
-
-        //char[] alphabetize = lowerLetters.ToCharArray();
-        ////Array.Sort<char>(alphabetize);
-
-        //var letterCount = alphabetize.OrderBy()
-
-        //Console.WriteLine(alphabetize);
-        ////return new string(scrambledLetters);
-        // }
-        //public void TestMethod()
-        //{
-        //    {
-        //        // Input array.
-        //        string[] array = { "the", "glass", "bead", "game" };
-
-        //        // Order alphabetically by reversed strings.
-        //        var result = array.OrderBy(a => new string(a.ToCharArray().Reverse().ToArray()));
-
-        //        // Display results.
-        //        foreach (var item in result)
+        //        if (letterFrequency[i] > 0 && char.IsLetterOrDigit((char)i))
         //        {
-        //            Console.WriteLine(item);
+
+        //            Console.WriteLine("{0} {1}", (char)i, letterFrequency[i]);
         //        }
-        //   }
+        //    }
+        //    return letterFrequency;
         //}
+
+        //}
+
+
+
+
 
     }
 }
