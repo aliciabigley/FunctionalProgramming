@@ -20,8 +20,9 @@ namespace FunctionalProgramming
 
             //working functions:
             //learnLINQ.RemoveDublicates(stringList, listOfInts);
-            learnLINQ.FindAverageOneStudentList(classGrades);
+           
             //learnLINQ.FindLetterFrequency("Llewellyn");
+            learnLINQ.AverageStudentGrades(classGrades);
             
             Console.ReadKey();
         }
