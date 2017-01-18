@@ -15,14 +15,12 @@ namespace FunctionalProgramming
             List<int> listOfInts = new List<int> { 1, 2, 3, 4, 1, 2, 3, 4 };
             List<string> classGrades = new List<string>{ "80,100,92,89,65","93,81,78,84,69","73,88,83,99,64", "98,100,66,74,55"};
             string[] classGrades2 = new string[] { "80,100,92,89,65", "93,81,78,84,69", "73,88,83,99,64", "98,100,66,74,55" };
-            //string student1 = ("90,100,82,89,55", "40,91,83,81,50") ;
-
+           
 
             //working functions:
-            //learnLINQ.RemoveDublicates(stringList, listOfInts);
-           
-            //learnLINQ.FindLetterFrequency("Llewellyn");
-            learnLINQ.AverageStudentGrades(classGrades);
+           //learnLINQ.RemoveDublicates(stringList, listOfInts);
+           //learnLINQ.FindLetterFrequency("ttdvhyjmhgtesxghy");
+           learnLINQ.AverageStudentGrades(classGrades);
             
             Console.ReadKey();
         }

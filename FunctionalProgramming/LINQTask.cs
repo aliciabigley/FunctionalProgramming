@@ -9,68 +9,52 @@ namespace FunctionalProgramming
 {
     public class LINQTask
     {
-       
+
         List<string> removeDuplicates;
         List<int> removeDublicates;
         double averageGrades;
+        double classAverage;
 
         //Problem 1
         public void RemoveDublicates(List<string> words, List<int> numbers)
         {
-            
+
             removeDuplicates = words.Distinct().ToList();
-            removeDublicates = numbers.Distinct().ToList();           
+            removeDublicates = numbers.Distinct().ToList();
         }
-        //string[] records = new[] { record1, record2 };
-        //string record = records.FirstOrDefault(r => r.Split(',').Any(s => s == "1"));
 
         //Problem 2
         public void AverageStudentGrades(List<string> studentGrades)
         {
             List<double> averageAverages = new List<double>();
-            int gradesInt;
-            
+            //int gradesInt;
             foreach (string value in studentGrades)
             {
-                var gradesToInteger = value.Split(new[] { ',' }).ToList();
-                //list of ints 
-                List<int> studentAverage = studentGrades.Select(int.Parse).ToList();
-                foreach (int x in value)
-                {
-                    int gradesInts = studentAverage.OrderBy(s => s.value).Skip(1).Average();
-                   
-                    //split at comma
-                    //= gradesString.OrderBy().Skip(1).Average();
-                    //return gradesInts;
-                    averageAverages.Add(gradesInts);
-                }
-                Console.WriteLine(averageAverages.Average()); 
-                //Add.StudentAverage To AverageAverages.Average();
-                //.ToList();
-                //List<int> gradeNumbers = new List<int>();
-                //foreach (int grade in gradeNumbers)
-                //{
-                //    gradeNumbers.Add(Convert.ToInt32(gradeNumbers));
-                //}
-                //var dropMinGrade = (from i in gradeNumbers where i > gradeNumbers.Min() select i);
+                List<double> studentAverage = value.Split(new[] { ',' }).Select(double.Parse).ToList();
+                
+                    var gradesInts = studentAverage;
+                    var dropMinAve = gradesInts.OrderBy(s => s).Skip(1).Average();
+                    averageAverages.Add(dropMinAve);
+
+                
             }
-            //List<int> numberGrades = studentGrades.Select(int.Parse).ToList();
-            //var gradesStringToInt = student1.Split(',').Select(int.Parse).ToList();
-
-
+            classAverage = averageAverages.Average();
+            Console.WriteLine(classAverage);
         }
 
         //Problem 3
         public void FindLetterFrequency(string randomLetters)
         {
             string upperLetters = String.Concat(randomLetters.ToUpper().OrderBy(alphabetical => alphabetical));
-            //string[] array = {upperLetters};
+            string[] array = {upperLetters};
             var letterFrequency = from i in upperLetters.ToArray() group i by i into groupLetters select groupLetters;
             foreach (var letter in letterFrequency)
                 Console.Write($"{letter.Key}{letter.Count()}");
         }
-       
-    }
+    }    
 }
+
+
+
 
 
